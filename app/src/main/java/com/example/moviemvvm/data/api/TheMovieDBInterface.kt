@@ -12,6 +12,8 @@ interface TheMovieDBInterface {
     @GET("movie/popular")
     fun getPopularMovie(@Query("page") page: Int): Single<MovieResponse>
 
+    //Here we need a single value so we're using single observable(rx)
+
     @GET("movie/{movie_id}")
     fun getMovieDetails(@Path("movie_id") id: Int): Single<MovieDetails>
 }
